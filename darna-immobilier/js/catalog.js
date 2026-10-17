@@ -3,7 +3,7 @@ function tr(k){return (I18N[curLang()]||I18N.fr)[k]||k}
 function fmtPrice(n){return n.toLocaleString('fr-FR').replace(/\u202f|\u00a0/g,' ')+' '+tr('cur')}
 function cardHTML(p){
   const n=String(p.id).padStart(2,'0');
-  return `<article class="prop"><div class="prop-img"><img src="assets/img/bien-${n}.svg" alt="${tr('t.'+p.type)} ${p.district}" loading="lazy">${p.tag?`<span class="badge${p.tag==='new'?' alt':''}">${tr('tag.'+p.tag)}</span>`:''}</div>
+  return `<article class="prop"><div class="prop-img"><img src="assets/img/bien-${n}.jpg" alt="${tr('t.'+p.type)} ${p.district}" loading="lazy">${p.tag?`<span class="badge${p.tag==='new'?' alt':''}">${tr('tag.'+p.tag)}</span>`:''}</div>
   <div class="prop-body"><div class="prop-loc"><i class="fa-solid fa-location-dot"></i> ${p.district}, ${tr('c.'+p.city)}</div>
   <h3>${tr('t.'+p.type)} — ${p.district}</h3><p class="prop-desc">${tr('d.'+p.type)}</p>
   <div class="meta"><span><i class="fa-solid fa-bed"></i>${p.rooms} ${tr('p.rooms')}</span><span><i class="fa-solid fa-bath"></i>${p.baths} ${tr('p.baths')}</span><span><i class="fa-solid fa-ruler-combined"></i>${p.area} m²</span></div>
